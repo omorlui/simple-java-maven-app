@@ -4,7 +4,7 @@ pipeline {
             reuseNode true
             image 'docker-sdda-dev/maven-openjdk:3.6.3-11.0.14'
             registryUrl 'https://fx-artifactory.uk.db.com/'
-//            registryCredentialsId '142900-1-docker_registry_user'
+            registryCredentialsId '142900-1-docker_registry_user'
             args '-v /u01/jenkins/m2-repo:/m2-repo:z'
         }
     }

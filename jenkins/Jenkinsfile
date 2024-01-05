@@ -1,8 +1,9 @@
 pipeline {
     agent {
         docker {
-            image 'maven:3.9.0'
-            args '-v /root/.m2:/root/.m2'
+            reuseNode true
+            image 'dk1755-a/mvn-3.5.4-jdk-8.0.271.2'
+            args '-v /u01/jenkins/m2-repo:/m2-repo:z'
         }
     }
     stages {

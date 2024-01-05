@@ -1,19 +1,25 @@
 package com.db.hashing;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class AppTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    private String INPUT = "123456";
-
+/**
+ * Unit test for simple App.
+ */
+public class AppTest
+{
     @Test
-    public void testLength() {
-        Assert.assertEquals(64, App.sha256hex(INPUT).length());
+    public void testAppConstructor() {
+        App app1 = new App();
+        App app2 = new App();
+        assertEquals(app1.getMessage(), app2.getMessage());
     }
 
     @Test
-    public void testHex() {
-        String expected = "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92";
-        Assert.assertEquals(expected, App.sha256hex(INPUT));
+    public void testAppMessage()
+    {
+        App app = new App();
+        assertEquals("Hello World!", app.getMessage());
     }
+}

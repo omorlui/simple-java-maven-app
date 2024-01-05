@@ -2,7 +2,9 @@ pipeline {
     agent {
         docker {
             reuseNode true
-            image 'dk1755-a/mvn-3.5.4-jdk-8.0.271.2'
+            image 'docker-sdda-dev/maven-openjdk:3.6.3-11.0.14'
+            registryUrl 'https://fx-artifactory.uk.db.com/'
+//            registryCredentialsId '142900-1-docker_registry_user'
             args '-v /u01/jenkins/m2-repo:/m2-repo:z'
         }
     }
